@@ -3,7 +3,9 @@
 _Create HTML Select element for Vietnam province, district and ward._
 
 API: 
-
+```html
+<script src="https://hyuyte3.herokuapp.com/assets/selectvietnam-d112e6f973e176ffad9e9bf163e54a9fef5b31410cb84dedd9b723f22c94a97a.js"></script>
+```
 ## Usage
 
 HTML:
