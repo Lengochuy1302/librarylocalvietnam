@@ -16,7 +16,9 @@ API:
 
 
 HTML:
-+ Form v1
++ Form v1 <br>
+![image](https://user-images.githubusercontent.com/54675603/189052343-76d61839-07d8-4ca7-b95a-805d22028bcf.png)
+
 ```html
 <form>
             <select name="ls_country" class="form-controlv height validate">
@@ -166,7 +168,9 @@ HTML:
         </form>
 ```
 
-+ Form v2
++ Form v2 <br>
+![image](https://user-images.githubusercontent.com/54675603/189052369-b8c12351-279c-4b89-a8b8-179634be6e17.png)
+
 ```html
  <form>
             <select name="ls_country">
