@@ -4,7 +4,7 @@ _Create HTML Select element for Vietnam province, district and ward._
 
 + DEMO: https://tappiweb.000webhostapp.com/
 
-API: 
+API JS: 
 ```html
     <script src="https://tappiweb.000webhostapp.com/selectvietnam.js"></script>
 ```
@@ -15,7 +15,7 @@ API:
 
 
 
-### HTML:
+#### HTML:
 ![image](https://user-images.githubusercontent.com/54675603/189052343-76d61839-07d8-4ca7-b95a-805d22028bcf.png)
 
 ```html
