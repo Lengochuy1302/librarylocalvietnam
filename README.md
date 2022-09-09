@@ -21,8 +21,7 @@ HTML:
 ```html
         <form>
             <label id="vietnam_local_select_error" style="color: red;"></label>
-            <input type="text" name="ls_country" id="txt_country" onclick="setvaluecountry()" onchange="country()" placeholder="Country"
-                list="dt_country">
+            <input type="text" name="ls_country" id="txt_country" onclick="setvaluecountry()" onchange="country()" placeholder="Country" list="dt_country">
                 <datalist id="dt_country" style="display: none;">
                     <option value="Việt Nam">Việt Nam</option>
                     <option value="Campuchia">Campuchia</option>
@@ -278,17 +277,13 @@ HTML:
                     <option value="Niue">Niue</option>
                     <option value="Tokelau">Tokelau</option>
                     <option value="Quần đảo Pitcairn">Quần đảo Pitcairn</option>
-                    
                 </datalist>
-    
 
-            <input type="text" name="ls_province" id="txt_province" onclick="setvalueprovince()" onchange="province()" placeholder="Province/City"
-                list="dt_province">
-            <datalist id="dt_province" >
+            <input type="text" name="ls_province" id="txt_province" onclick="setvalueprovince()" onchange="province()" placeholder="Province/City" list="dt_province">
+            <datalist id="dt_province"  style="display: none;">
             </datalist>
 
-            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district()" placeholder="District"
-                list="dt_district">
+            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district()" placeholder="District" list="dt_district">
             <datalist id="dt_district" style="display: none;">
             </datalist>
 
