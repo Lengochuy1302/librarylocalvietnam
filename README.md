@@ -20,10 +20,12 @@ API JS:
 ![image](https://user-images.githubusercontent.com/54675603/189052343-76d61839-07d8-4ca7-b95a-805d22028bcf.png)
 
 ```html
+        <!-- The above code is a form that allows the user to select a country, province, district, and ward. -->
         <form>
+            <!-- Show error -->
             <label id="vietnam_local_select_error" style="color: red;"></label>
             <input type="text" name="ls_country" id="txt_country" onclick="setvaluecountry()" onchange="country()" placeholder="Country" list="dt_country">
-                <datalist id="dt_country" style="display: none;">
+            <datalist id="dt_country" style="display: none;">
                     <option value="Việt Nam">Việt Nam</option>
                     <option value="Campuchia">Campuchia</option>
                     <option value="Lào">Lào</option>
@@ -278,17 +280,18 @@ API JS:
                     <option value="Niue">Niue</option>
                     <option value="Tokelau">Tokelau</option>
                     <option value="Quần đảo Pitcairn">Quần đảo Pitcairn</option>
-                </datalist>
-
+                    
+            </datalist>
+    
             <input type="text" name="ls_province" id="txt_province" onclick="setvalueprovince()" onchange="province()" placeholder="Province/City" list="dt_province">
             <datalist id="dt_province"  style="display: none;">
             </datalist>
 
-            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district()" placeholder="District" list="dt_district">
+            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district(true)" placeholder="District" list="dt_district">
             <datalist id="dt_district" style="display: none;">
             </datalist>
 
-            <input type="text" name="ls_ward" id="txt_ward" onclick="setvalueward()" placeholder="Ward" list="dt_ward">
+            <input type="text" name="ls_ward" id="txt_ward" onclick="setvalueward()" onchange="ward()" placeholder="Ward" list="dt_ward">
             <datalist id="dt_ward" style="display: none;">
             </datalist>
         </form>

@@ -20,13 +20,12 @@
 </style>
 <body>
         <div class="container">
-        <!-- The above code is a form that allows the user to select a country, province, district, and
-        ward. -->
+        <!-- The above code is a form that allows the user to select a country, province, district, and ward. -->
         <form>
+            <!-- Show error -->
             <label id="vietnam_local_select_error" style="color: red;"></label>
-            <input type="text" name="ls_country" id="txt_country" onclick="setvaluecountry()" onchange="country()" placeholder="Country"
-                list="dt_country">
-                <datalist id="dt_country" style="display: none;">
+            <input type="text" name="ls_country" id="txt_country" onclick="setvaluecountry()" onchange="country()" placeholder="Country" list="dt_country">
+            <datalist id="dt_country" style="display: none;">
                     <option value="Việt Nam">Việt Nam</option>
                     <option value="Campuchia">Campuchia</option>
                     <option value="Lào">Lào</option>
@@ -282,16 +281,13 @@
                     <option value="Tokelau">Tokelau</option>
                     <option value="Quần đảo Pitcairn">Quần đảo Pitcairn</option>
                     
-                </datalist>
+            </datalist>
     
-
-            <input type="text" name="ls_province" id="txt_province" onclick="setvalueprovince()" onchange="province()" placeholder="Province/City"
-                list="dt_province">
+            <input type="text" name="ls_province" id="txt_province" onclick="setvalueprovince()" onchange="province()" placeholder="Province/City" list="dt_province">
             <datalist id="dt_province"  style="display: none;">
             </datalist>
 
-            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district(true)" placeholder="District"
-                list="dt_district">
+            <input type="text" name="ls_district" id="txt_district"onclick="setvaluedistrict()" onchange="district(true)" placeholder="District" list="dt_district">
             <datalist id="dt_district" style="display: none;">
             </datalist>
 
@@ -299,7 +295,6 @@
             <datalist id="dt_ward" style="display: none;">
             </datalist>
         </form>
-
     </div>
     <script charset="UTF-8" src="/selectvietnam.js"></script>
 </body>
