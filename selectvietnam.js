@@ -7,6 +7,16 @@ function checkNospace(value) {
 }
 
 function setvaluecountry() {
+    document.getElementById('txt_country').value = "";
+    document.getElementById('txt_province').value = "";
+    document.getElementById('txt_district').value = "";
+    document.getElementById('txt_ward').value = "";
+    document.getElementById("dt_province").innerHTML = ''
+    document.getElementById("dt_district").innerHTML = ''
+    document.getElementById("dt_ward").innerHTML = ''
+}
+
+function setvalueprovince() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
     var error_label = document.getElementById('vietnam_local_select_error');
@@ -16,20 +26,16 @@ function setvaluecountry() {
         error_label.style.display = "block";
         return;
     }
-    document.getElementById('txt_country').value = "";
     document.getElementById('txt_province').value = "";
     document.getElementById('txt_district').value = "";
     document.getElementById('txt_ward').value = "";
-}
-
-function setvalueprovince() {
-    document.getElementById('txt_province').value = "";
-    document.getElementById('txt_district').value = "";
-    document.getElementById('txt_ward').value = "";
+    document.getElementById("dt_district").innerHTML = ''
+    document.getElementById("dt_ward").innerHTML = ''
 }
 function setvaluedistrict() {
     document.getElementById('txt_district').value = "";
     document.getElementById('txt_ward').value = "";
+    document.getElementById("dt_ward").innerHTML = ''
 }
 function setvalueward() {
     document.getElementById('txt_ward').value = "";
