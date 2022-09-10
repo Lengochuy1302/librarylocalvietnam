@@ -33,15 +33,6 @@ function setvalueprovince() {
     document.getElementById("dt_ward").innerHTML = ''
 }
 function setvaluedistrict() {
-    document.getElementById('txt_district').value = "";
-    document.getElementById('txt_ward').value = "";
-    document.getElementById("dt_ward").innerHTML = ''
-}
-function setvalueward() {
-    document.getElementById('txt_ward').value = "";
-}
-
-function country() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
     var error_label = document.getElementById('vietnam_local_select_error');
@@ -49,32 +40,99 @@ function country() {
         error_country.style.border = "1px solid red";
         error_label.innerHTML = "Please enter country";
         error_label.style.display = "block";
-    } else if (checkNospace(country) == false) {
+        return;
+    }
+
+    var province = document.getElementById('txt_province').value;
+    var error_province = document.getElementById('txt_province');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (province == null || province == "") {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter province";
+        error_label.style.display = "block";
+        return;
+    }
+
+    document.getElementById('txt_district').value = "";
+    document.getElementById('txt_ward').value = "";
+    document.getElementById("dt_ward").innerHTML = ''
+}
+function setvalueward() {
+    var country = document.getElementById('txt_country').value;
+    var error_country = document.getElementById('txt_country');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (country == null || country == "") {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter country";
+        error_label.style.display = "block";
+        return;
+    }
+
+    var province = document.getElementById('txt_province').value;
+    var error_province = document.getElementById('txt_province');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (province == null || province == "") {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter province";
+        error_label.style.display = "block";
+        return;
+    }
+
+    var district = document.getElementById('txt_district').value;
+    var error_district = document.getElementById('txt_district');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (district == null || district == "") {
+        error_district.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter district";
+        error_label.style.display = "block";
+        return;
+    }
+    document.getElementById('txt_ward').value = "";
+}
+
+function country() {
+    var country = document.getElementById('txt_country').value;
+    var error_country = document.getElementById('txt_country');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (checkNospace(country) == false) {
         error_country.style.border = "1px solid red";
         error_label.innerHTML = "Please do not leave white spaces in country";
         error_label.style.display = "block";
+        return;
     } else {
         error_country.style.border = "1px solid #ced4da";
         error_label.style.display = "none";
-        if (country == "Việt Nam") {
-            document.getElementById("txt_province").placeholder = 'Province/City';
-            document.getElementById("txt_district").placeholder = 'District';
-            document.getElementById("txt_ward").placeholder = 'Ward';
-            document.getElementById("dt_province").innerHTML = '<option value="An Giang">An Giang</option><option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option><option value="Bắc Giang">Bắc Giang</option><option value="Bắc Kạn">Bắc Kạn</option><option value="Bạc Liêu">Bạc Liêu</option><option value="Bắc Ninh">Bắc Ninh</option><option value="Bến Tre">Bến Tre</option><option value="Bình Định">Bình Định</option><option value="Bình Dương">Bình Dương</option><option value="Bình Phước">Bình Phước</option><option value="Bình Thuận">Bình Thuận</option><option value="Cà Mau">Cà Mau</option><option value="Cần Thơ">Cần Thơ</option><option value="Cao Bằng">Cao Bằng</option><option value="Đà Nẵng">Đà Nẵng</option><option value="Đắk Lắk">Đắk Lắk</option><option value="Đắk Nông">Đắk Nông</option><option value="Điện Biên">Điện Biên</option><option value="Đồng Nai">Đồng Nai</option><option value="Đồng Tháp">Đồng Tháp</option><option value="Gia Lai">Gia Lai</option><option value="Hà Giang">Hà Giang</option><option value="Hà Nam">Hà Nam</option><option value="Hà Nội">Hà Nội</option><option value="Hà Tĩnh">Hà Tĩnh</option><option value="Hải Dương">Hải Dương</option><option value="Hải Phòng">Hải Phòng</option><option value="Hồ Chí Minh">Hồ Chí Minh</option><option value="Hòa Bình">Hòa Bình</option><option value="Hưng Yên">Hưng Yên</option><option value="Khánh Hòa">Khánh Hòa</option><option value="Kiên Giang">Kiên Giang</option><option value="Kon Tum">Kon Tum</option><option value="Lai Châu">Lai Châu</option><option value="Lâm Đồng">Lâm Đồng</option><option value="Lạng Sơn">Lạng Sơn</option><option value="Lào Cai">Lào Cai</option><option value="Long An">Long An</option><option value="Nam Định">Nam Định</option><option value="Nghệ An">Nghệ An</option><option value="Ninh Bình">Ninh Bình</option><option value="Ninh Thuận">Ninh Thuận</option><option value="Phú Thọ">Phú Thọ</option><option value="Phú Yên">Phú Yên</option><option value="Quảng Bình">Quảng Bình</option><option value="Quảng Nam">Quảng Nam</option><option value="Quảng Ngãi">Quảng Ngãi</option><option value="Quảng Ninh">Quảng Ninh</option><option value="Quảng Trị">Quảng Trị</option><option value="Khánh Hưng">Khánh Hưng</option><option value="Sơn La">Sơn La</option><option value="Tây Ninh">Tây Ninh</option><option value="Thái Bình">Thái Bình</option><option value="Thái Nguyên">Thái Nguyên</option><option value="Thanh Hóa">Thanh Hóa</option><option value="Thừa Thiên - Huế">Thừa Thiên - Huế</option><option value="Tiền Giang">Tiền Giang</option><option value="Trà Vinh">Trà Vinh</option><option value="Tuyên Quang">Tuyên Quang</option><option value="Vĩnh Long">Vĩnh Long</option><option value="Vĩnh Phúc">Vĩnh Phúc</option><option value="Yên Bái">Yên Bái</option>'
-        }
-        else {
-            document.getElementById("txt_province").placeholder = 'Please enter the province';
-            document.getElementById("txt_district").placeholder = 'Please enter the district';
-            document.getElementById("txt_ward").placeholder = 'Please enter the ward';
-            document.getElementById("dt_province").innerHTML = ''
-            document.getElementById("dt_district").innerHTML = ''
-            document.getElementById("dt_ward").innerHTML = ''
+    }
+    if (country == "Việt Nam") {
+        document.getElementById("txt_province").placeholder = 'Province/City';
+        document.getElementById("txt_district").placeholder = 'District';
+        document.getElementById("txt_ward").placeholder = 'Ward';
+        document.getElementById("dt_province").innerHTML = '<option value="An Giang">An Giang</option><option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu</option><option value="Bắc Giang">Bắc Giang</option><option value="Bắc Kạn">Bắc Kạn</option><option value="Bạc Liêu">Bạc Liêu</option><option value="Bắc Ninh">Bắc Ninh</option><option value="Bến Tre">Bến Tre</option><option value="Bình Định">Bình Định</option><option value="Bình Dương">Bình Dương</option><option value="Bình Phước">Bình Phước</option><option value="Bình Thuận">Bình Thuận</option><option value="Cà Mau">Cà Mau</option><option value="Cần Thơ">Cần Thơ</option><option value="Cao Bằng">Cao Bằng</option><option value="Đà Nẵng">Đà Nẵng</option><option value="Đắk Lắk">Đắk Lắk</option><option value="Đắk Nông">Đắk Nông</option><option value="Điện Biên">Điện Biên</option><option value="Đồng Nai">Đồng Nai</option><option value="Đồng Tháp">Đồng Tháp</option><option value="Gia Lai">Gia Lai</option><option value="Hà Giang">Hà Giang</option><option value="Hà Nam">Hà Nam</option><option value="Hà Nội">Hà Nội</option><option value="Hà Tĩnh">Hà Tĩnh</option><option value="Hải Dương">Hải Dương</option><option value="Hải Phòng">Hải Phòng</option><option value="Hồ Chí Minh">Hồ Chí Minh</option><option value="Hòa Bình">Hòa Bình</option><option value="Hưng Yên">Hưng Yên</option><option value="Khánh Hòa">Khánh Hòa</option><option value="Kiên Giang">Kiên Giang</option><option value="Kon Tum">Kon Tum</option><option value="Lai Châu">Lai Châu</option><option value="Lâm Đồng">Lâm Đồng</option><option value="Lạng Sơn">Lạng Sơn</option><option value="Lào Cai">Lào Cai</option><option value="Long An">Long An</option><option value="Nam Định">Nam Định</option><option value="Nghệ An">Nghệ An</option><option value="Ninh Bình">Ninh Bình</option><option value="Ninh Thuận">Ninh Thuận</option><option value="Phú Thọ">Phú Thọ</option><option value="Phú Yên">Phú Yên</option><option value="Quảng Bình">Quảng Bình</option><option value="Quảng Nam">Quảng Nam</option><option value="Quảng Ngãi">Quảng Ngãi</option><option value="Quảng Ninh">Quảng Ninh</option><option value="Quảng Trị">Quảng Trị</option><option value="Khánh Hưng">Khánh Hưng</option><option value="Sơn La">Sơn La</option><option value="Tây Ninh">Tây Ninh</option><option value="Thái Bình">Thái Bình</option><option value="Thái Nguyên">Thái Nguyên</option><option value="Thanh Hóa">Thanh Hóa</option><option value="Thừa Thiên - Huế">Thừa Thiên - Huế</option><option value="Tiền Giang">Tiền Giang</option><option value="Trà Vinh">Trà Vinh</option><option value="Tuyên Quang">Tuyên Quang</option><option value="Vĩnh Long">Vĩnh Long</option><option value="Vĩnh Phúc">Vĩnh Phúc</option><option value="Yên Bái">Yên Bái</option>'
+    }
+    else {
+        document.getElementById("txt_province").placeholder = 'Please enter the province';
+        document.getElementById("txt_district").placeholder = 'Please enter the district';
+        document.getElementById("txt_ward").placeholder = 'Please enter the ward';
+        document.getElementById("dt_province").innerHTML = ''
+        document.getElementById("dt_district").innerHTML = ''
+        document.getElementById("dt_ward").innerHTML = ''
 
-        }
     }
 }
 function province() {
     var e = document.getElementById("txt_province").value;
+    var province = document.getElementById('txt_province').value;
+    var error_province = document.getElementById('txt_province');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (checkNospace(province) == false) {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in province";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_province.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
     if (e == "An Giang") document.getElementById("dt_district").innerHTML = '<option value="" disabled="" hidden="">District</option><option value="An Phú" data-level="Huyện">Huyện An Phú</option><option value="Châu Đốc" data-level="Thị Xã">Thị Xã Châu Đốc</option><option value="Châu Phú" data-level="Huyện">Huyện Châu Phú</option><option value="Châu Thành" data-level="Huyện">Huyện Châu Thành</option><option value="Chợ Mới" data-level="Huyện">Huyện Chợ Mới</option><option value="Long Xuyên" data-level="Thành Phố">Thành Phố Long Xuyên</option><option value="Phú Tân" data-level="Huyện">Huyện Phú Tân</option><option value="Tân Châu" data-level="Thị Xã">Thị Xã Tân Châu</option><option value="Thoại Sơn" data-level="Huyện">Huyện Thoại Sơn</option><option value="Tịnh Biên" data-level="Huyện">Huyện Tịnh Biên</option>'
     else if (e == "Bà Rịa - Vũng Tàu") document.getElementById("dt_district").innerHTML = '<option value="" disabled="" hidden="">District</option><option value="Bà Rịa" data-level="Thị Xã">Thị Xã Bà Rịa</option><option value="Châu Đức" data-level="Huyện">Huyện Châu Đức</option><option value="Côn Đảo" data-level="Huyện">Huyện Côn Đảo</option><option value="Đất Đỏ" data-level="Huyện">Huyện Đất Đỏ</option><option value="Long Điền" data-level="Huyện">Huyện Long Điền</option><option value="Tân Thành" data-level="Huyện">Huyện Tân Thành</option><option value="Vũng Tầu" data-level="Thành Phố">Thành Phố Vũng Tầu</option>'
     else if (e == "Bắc Giang") document.getElementById("dt_district").innerHTML = '<option value="" disabled="" hidden="">District</option><option value="Bắc Giang" data-level="Thành Phố">Thành Phố Bắc Giang</option><option value="Hiệp Hòa" data-level="Huyện">Huyện Hiệp Hòa</option><option value="Lạng Giang" data-level="Huyện">Huyện Lạng Giang</option><option value="Lục Nam" data-level="Huyện">Huyện Lục Nam</option><option value="Lục Ngạn" data-level="Huyện">Huyện Lục Ngạn</option><option value="Sơn Động" data-level="Huyện">Huyện Sơn Động</option><option value="Tân Yên" data-level="Huyện">Huyện Tân Yên</option><option value="Việt Yên" data-level="Huyện">Huyện Việt Yên</option><option value="Yên Dũng" data-level="Huyện">Huyện Yên Dũng</option>'
@@ -146,7 +204,18 @@ function province() {
 
 function district() {
     var e = document.getElementById("txt_district").value;
-
+    var district = document.getElementById('txt_district').value;
+    var error_district = document.getElementById('txt_district');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (checkNospace(district) == false) {
+        error_district.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in district";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_district.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
     // An giang 
     if (e == "An Phú") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="An Phú" data-level="Thị Trấn">Thị Trấn An Phú</option><option value="Đa Phước" data-level="Xã">Xã Đa Phước</option><option value="Khánh An" data-level="Xã">Xã Khánh An</option><option value="Khánh Bình" data-level="Xã">Xã Khánh Bình</option><option value="Long Bình" data-level="Thị Trấn">Thị Trấn Long Bình</option><option value="Nhơn Hội" data-level="Xã">Xã Nhơn Hội</option><option value="Phú Hội" data-level="Xã">Xã Phú Hội</option><option value="Phú Hữu" data-level="Xã">Xã Phú Hữu</option><option value="Phước Hưng" data-level="Xã">Xã Phước Hưng</option><option value="Quốc Thái" data-level="Xã">Xã Quốc Thái</option><option value="Vĩnh Hậu" data-level="Xã">Xã Vĩnh Hậu</option><option value="Vĩnh Hội Đông" data-level="Xã">Xã Vĩnh Hội Đông</option><option value="Vĩnh Lộc" data-level="Xã">Xã Vĩnh Lộc</option>'
     else if (e == "Châu Đốc") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="Châu Phú A" data-level="Phường">Phường Châu Phú A</option><option value="Châu Phú B" data-level="Phường">Phường Châu Phú B</option><option value="Núi Sam" data-level="Phường">Phường Núi Sam</option><option value="Vĩnh Châu" data-level="Xã">Xã Vĩnh Châu</option><option value="Vĩnh Mỹ" data-level="Phường">Phường Vĩnh Mỹ</option><option value="Vĩnh Ngươn" data-level="Xã">Xã Vĩnh Ngươn</option>'
@@ -936,6 +1005,22 @@ function district() {
     else if (e == "Văn Chấn") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="NT Liên Sơn">Thị trấn NT Liên Sơn</option><option value="NT Trần Phú">Thị trấn NT Trần Phú</option><option value="Tú Lệ">Xã Tú Lệ</option><option value="Nậm Búng">Xã Nậm Búng</option><option value="Gia Hội">Xã Gia Hội</option><option value="Sùng Đô">Xã Sùng Đô</option><option value="Nậm Mười">Xã Nậm Mười</option><option value="An Lương">Xã An Lương</option>'
     else if (e == "Yên Bình") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="Yên Bình">Thị trấn Yên Bình</option><option value="Thác Bà">Thị trấn Thác Bà</option><option value="Xuân Long">Xã Xuân Long</option><option value="Cảm Nhân">Xã Cảm Nhân</option><option value="Ngọc Chấn">Xã Ngọc Chấn</option><option value="Tân Nguyên">Xã Tân Nguyên</option><option value="Phúc Ninh">Xã Phúc Ninh</option><option value="Bảo Ái">Xã Bảo Ái</option>'
 
+}
+
+function ward() {
+    var ward = document.getElementById('txt_ward').value;
+    var error_ward = document.getElementById('txt_ward');
+    var error_label = document.getElementById('vietnam_local_select_error');
+  
+    if (checkNospace(ward) == false) {
+        error_ward.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in ward";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_ward.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
 }
 
 
