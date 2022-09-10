@@ -7,7 +7,10 @@ _Create HTML Select element for Vietnam province, district and ward._
 
 API JS: 
 ```html
+    <!-- api v2  -->
     <script src="http://lengochuy13.tk/selectvietnam.js"></script>
+    <!-- api v1  -->
+    <script src="https://pure-refuge-24132.herokuapp.com/assets/selectvietnam-78d0db86a154c518ae9695e1b78a15581401fe9e1b9dd6aa71c2872131892422.js"></script>
 ```
 
 
