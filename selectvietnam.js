@@ -1,3 +1,8 @@
+/**
+ * If the value is not empty or the value is not a space, return true.
+ * @param value - The value to be checked.
+ * @returns a boolean value.
+ */
 function checkNospace(value) {
     if (value == '' || value.trim().length != 0) {
         return true;
@@ -6,6 +11,9 @@ function checkNospace(value) {
     }
 }
 
+/**
+ * When the user selects a country, the province, district, and ward fields are cleared.
+ */
 function setvaluecountry() {
     document.getElementById('txt_country').value = "";
     document.getElementById('txt_province').value = "";
@@ -16,6 +24,10 @@ function setvaluecountry() {
     document.getElementById("dt_ward").innerHTML = ''
 }
 
+/**
+ * If the country is not null or empty, then set the province, district, and ward to empty strings.
+ * @returns The value of the selected option.
+ */
 function setvalueprovince() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
@@ -32,6 +44,11 @@ function setvalueprovince() {
     document.getElementById("dt_district").innerHTML = ''
     document.getElementById("dt_ward").innerHTML = ''
 }
+
+/**
+ * If the country and province fields are not empty, then clear the district and ward fields.
+ * @returns The value of the selected option.
+ */
 function setvaluedistrict() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
@@ -57,6 +74,12 @@ function setvaluedistrict() {
     document.getElementById('txt_ward').value = "";
     document.getElementById("dt_ward").innerHTML = ''
 }
+
+/**
+ * If the country, province, or district fields are empty, then set the border to red and display an
+ * error message.
+ * @returns The value of the selected option.
+ */
 function setvalueward() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
@@ -90,6 +113,11 @@ function setvalueward() {
     document.getElementById('txt_ward').value = "";
 }
 
+/**
+ * If the country is Vietnam, then the placeholder of the province, district, and ward will be changed
+ * to Vietnamese.
+ * @returns the value of the variable country.
+ */
 function country() {
     var country = document.getElementById('txt_country').value;
     var error_country = document.getElementById('txt_country');
@@ -119,12 +147,35 @@ function country() {
 
     }
 }
+
 function province() {
     var e = document.getElementById("txt_province").value;
+    var country = document.getElementById('txt_country').value;
+    var error_country = document.getElementById('txt_country');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (country == null || country == "") {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter country";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(country) == false) {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in country";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_country.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+
     var province = document.getElementById('txt_province').value;
     var error_province = document.getElementById('txt_province');
-    var error_label = document.getElementById('vietnam_local_select_error');
-    if (checkNospace(province) == false) {
+    if (province == null || province == "") {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter province";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(province) == false) {
         error_province.style.border = "1px solid red";
         error_label.innerHTML = "Please do not leave white spaces in province";
         error_label.style.display = "block";
@@ -204,10 +255,49 @@ function province() {
 
 function district() {
     var e = document.getElementById("txt_district").value;
+    var country = document.getElementById('txt_country').value;
+    var error_country = document.getElementById('txt_country');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (country == null || country == "") {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter country";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(country) == false) {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in country";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_country.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+
+    var province = document.getElementById('txt_province').value;
+    var error_province = document.getElementById('txt_province');
+    if (province == null || province == "") {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter province";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(province) == false) {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in province";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_province.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+    
     var district = document.getElementById('txt_district').value;
     var error_district = document.getElementById('txt_district');
-    var error_label = document.getElementById('vietnam_local_select_error');
-    if (checkNospace(district) == false) {
+    if (district == null || district == "") {
+        error_district.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter district";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(district) == false) {
         error_district.style.border = "1px solid red";
         error_label.innerHTML = "Please do not leave white spaces in district";
         error_label.style.display = "block";
@@ -216,6 +306,7 @@ function district() {
         error_district.style.border = "1px solid #ced4da";
         error_label.style.display = "none";
     }
+
     // An giang 
     if (e == "An Phú") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="An Phú" data-level="Thị Trấn">Thị Trấn An Phú</option><option value="Đa Phước" data-level="Xã">Xã Đa Phước</option><option value="Khánh An" data-level="Xã">Xã Khánh An</option><option value="Khánh Bình" data-level="Xã">Xã Khánh Bình</option><option value="Long Bình" data-level="Thị Trấn">Thị Trấn Long Bình</option><option value="Nhơn Hội" data-level="Xã">Xã Nhơn Hội</option><option value="Phú Hội" data-level="Xã">Xã Phú Hội</option><option value="Phú Hữu" data-level="Xã">Xã Phú Hữu</option><option value="Phước Hưng" data-level="Xã">Xã Phước Hưng</option><option value="Quốc Thái" data-level="Xã">Xã Quốc Thái</option><option value="Vĩnh Hậu" data-level="Xã">Xã Vĩnh Hậu</option><option value="Vĩnh Hội Đông" data-level="Xã">Xã Vĩnh Hội Đông</option><option value="Vĩnh Lộc" data-level="Xã">Xã Vĩnh Lộc</option>'
     else if (e == "Châu Đốc") document.getElementById("dt_ward").innerHTML = '<option value="" disabled="" hidden="">Ward</option><option value="Châu Phú A" data-level="Phường">Phường Châu Phú A</option><option value="Châu Phú B" data-level="Phường">Phường Châu Phú B</option><option value="Núi Sam" data-level="Phường">Phường Núi Sam</option><option value="Vĩnh Châu" data-level="Xã">Xã Vĩnh Châu</option><option value="Vĩnh Mỹ" data-level="Phường">Phường Vĩnh Mỹ</option><option value="Vĩnh Ngươn" data-level="Xã">Xã Vĩnh Ngươn</option>'
@@ -1007,12 +1098,72 @@ function district() {
 
 }
 
+/**
+ * If the input is empty or contains only white spaces, then the border of the input will be red and
+ * the error message will be displayed.
+ * @returns the value of the variable "ward"
+ */
 function ward() {
+    var country = document.getElementById('txt_country').value;
+    var error_country = document.getElementById('txt_country');
+    var error_label = document.getElementById('vietnam_local_select_error');
+    if (country == null || country == "") {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter country";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(country) == false) {
+        error_country.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in country";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_country.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+
+    var province = document.getElementById('txt_province').value;
+    var error_province = document.getElementById('txt_province');
+    if (province == null || province == "") {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter province";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(province) == false) {
+        error_province.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in province";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_province.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+    
+    var district = document.getElementById('txt_district').value;
+    var error_district = document.getElementById('txt_district');
+    if (district == null || district == "") {
+        error_district.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter district";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(district) == false) {
+        error_district.style.border = "1px solid red";
+        error_label.innerHTML = "Please do not leave white spaces in district";
+        error_label.style.display = "block";
+        return;
+    } else {
+        error_district.style.border = "1px solid #ced4da";
+        error_label.style.display = "none";
+    }
+
     var ward = document.getElementById('txt_ward').value;
     var error_ward = document.getElementById('txt_ward');
-    var error_label = document.getElementById('vietnam_local_select_error');
-  
-    if (checkNospace(ward) == false) {
+    if (ward == null || ward == "") {
+        error_ward.style.border = "1px solid red";
+        error_label.innerHTML = "Please enter ward";
+        error_label.style.display = "block";
+        return;
+    } else if (checkNospace(ward) == false) {
         error_ward.style.border = "1px solid red";
         error_label.innerHTML = "Please do not leave white spaces in ward";
         error_label.style.display = "block";
