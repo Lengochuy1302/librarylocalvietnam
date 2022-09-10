@@ -3,10 +3,11 @@
 _Create HTML Select element for Vietnam province, district and ward._
 
 + DEMO: https://tappiweb.000webhostapp.com/
++ Demo: http://lengochuy13.tk/
 
 API JS: 
 ```html
-    <script src="https://tappiweb.000webhostapp.com/selectvietnam.js"></script>
+    <script src="http://lengochuy13.tk/selectvietnam.js"></script>
 ```
 
 
