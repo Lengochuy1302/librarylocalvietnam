@@ -60,6 +60,7 @@ function country() {
             document.getElementById("txt_province").placeholder = 'Please enter the province';
             document.getElementById("txt_district").placeholder = 'Please enter the district';
             document.getElementById("txt_ward").placeholder = 'Please enter the ward';
+            document.getElementById("dt_province").innerHTML = ''
 
         }
     }
