@@ -2,9 +2,6 @@
 
 _Create HTML Select element for Vietnam province, district and ward._
 
-+ DEMO: https://tappiweb.000webhostapp.com/
-+ Demo: http://lengochuy13.tk/
-
 API JS: 
 ```html
     <!-- api v2  -->
